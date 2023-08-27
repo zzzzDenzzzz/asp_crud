@@ -1,0 +1,59 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Стоимость</th>
+                <th>Автор</th>
+                <th>Количество страниц</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var book in Model.Books)
+            {
+                <tr>
+                    <td>@book.Name</td>
+                    <td>@book.Price</td>
+                    <td>@book.Author</td>
+                    <td>@book.PageCount</td>
+                    <td>
+                        <button class="btn btn-danger" onsubmit="delete" asp-route-id="@book">Удалить</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Дата рождения</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var author in Model.Authors)
+            {
+                <tr>
+                    <td>@author.FirstName</td>
+                    <td>@author.LastName</td>
+                    <td>@author.BirthDate</td>
+                    <td>
+                        <button class="btn btn-danger" onsubmit="delete" asp-route-id="@author">Удалить</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

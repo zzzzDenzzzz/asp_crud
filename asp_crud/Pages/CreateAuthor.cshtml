@@ -1,0 +1,24 @@
+﻿@page
+@model CreateAuthorModel
+@{
+}
+
+<h1 class="display-4">Добавить автора</h1>
+<form method="post">
+    <div class="my-1">
+        <label asp-for="FirstNameAuthor"></label>
+        <input class="form-control" asp-for="FirstNameAuthor" />
+        <span asp-validation-for="FirstNameAuthor"></span>
+    </div>
+    <div class="my-1">
+        <label asp-for="LastNameAuthor"></label>
+        <input class="form-control" asp-for="LastNameAuthor" />
+        <span asp-validation-for="LastNameAuthor"></span>
+    </div>
+    <div class="my-1">
+        <label asp-for="BirthDateAuthor"></label>
+        <input class="form-control" asp-for="BirthDateAuthor" />
+        <span asp-validation-for="BirthDateAuthor"></span>
+    </div>
+    <button class="btn btn-primary my-1" type="submit">Добавить</button>
+</form>
